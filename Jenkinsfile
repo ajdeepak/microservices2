@@ -5,7 +5,7 @@ pipeline {
         stage('Build & Tag Docker Image') {
             steps {
                 script {
-                    dir('src') {
+                    dir('src') { 
 
                     withDockerRegistry(credentialsId: 'docker1', toolName: 'docker') {
                         sh "docker build -t ajdeepak45/cartservice:latest ."

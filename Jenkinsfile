@@ -5,8 +5,8 @@ pipeline {
         stage('Build & Tag Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker build -t adijaiswal/checkoutservice:latest ."
+                    withDockerRegistry(credentialsId: 'docker1', toolName: 'docker') {
+                        sh "docker build -t ajdeepak45/checkoutservice:latest ."
                     }
                 }
             }
@@ -15,8 +15,8 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker push adijaiswal/checkoutservice:latest "
+                    withDockerRegistry(credentialsId: 'docker1', toolName: 'docker') {
+                        sh "docker push ajdeepak45/checkoutservice:latest "
                     }
                 }
             }
